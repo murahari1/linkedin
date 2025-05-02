@@ -1,17 +1,83 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Register/Login</title>
-  <link rel="stylesheet" href="{{url_for('static',filename='css/style.css')}}">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Colorful Login</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background: linear-gradient(120deg, #f39c12, #8e44ad);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    .container {
+      background: #fff;
+      border-radius: 12px;
+      padding: 30px;
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+      text-align: center;
+      width: 400px;
+    }
+    .login-selector button, .submit-btn {
+      width: 90%;
+      margin: 10px 0;
+      padding: 12px;
+      border: none;
+      border-radius: 6px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    .user-btn { background: #3498db; color: #fff; }
+    .user-btn:hover { background: #2980b9; }
+    .admin-btn { background: #e74c3c; color: #fff; }
+    .admin-btn:hover { background: #c0392b; }
+    .submit-btn { background: #2ecc71; color: #fff; }
+    .submit-btn:hover { background: #27ae60; }
+    input {
+      width: 90%;
+      padding: 10px;
+      margin: 10px 0;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+    }
+    .hidden { display: none; }
+  </style>
 </head>
 <body>
-  <div class="outer">
-    <h1>Type of Login</h1>
-    <div class="inner">
-        <button id="provide">Provide Login</button>
-        <button id="worker">Worker Login</button>
+  <div class="container">
+    <h2>Select Login Type</h2>
+    <div class="login-selector">
+      <button class="user-btn" onclick="showLogin('provider')">Provider Login</button>
+      <button class="admin-btn" onclick="showLogin('worker')">Worker Login</button>
+    </div>
+
+    <div id="provider-login" class="hidden">
+      <h3>Provider Login</h3>
+      <input type="text" placeholder="Provider Name" required />
+      <input type="password" placeholder="Password" required />
+      <button class="submit-btn">Login</button>
+    </div>
+
+    <div id="worker-login" class="hidden">
+      <h3>Worker Login</h3>
+      <input type="text" placeholder="Worker Username" required />
+      <input type="password" placeholder="Password" required />
+      <input type="text" placeholder="Admin Key" required />
+      <button class="submit-btn">Login</button>
     </div>
   </div>
+
+  <script>
+    function showLogin(type) {
+      document.getElementById('provider-login').classList.add('hidden');
+      document.getElementById('worker-login').classList.add('hidden');
+      document.getElementById(type + '-login').classList.remove('hidden');
+  }
+  </script>
 </body>
 </html>
