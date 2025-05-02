@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background: linear-gradient(120deg, #f39c12, #8e44ad);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            background: #fff;
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            width: 400px;
+        }
+        h1 {
+            color: #333;
+            margin-bottom: 20px;
+        }
+        input, button {
+            width: 90%;
+            padding: 12px;
+            margin: 10px 0;
+            border-radius: 6px;
+            font-size: 16px;
+        }
+        input {
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+        }
+        input:focus {
+            outline: none;
+            border-color: #3498db;
+            box-shadow: 0 0 5px rgba(52, 152, 219, 0.5);
+        }
+        input[type="number"] {
+            -webkit-appearance: none;
+            -moz-appearance: textfield;
+            appearance: none;
+        }
+        button {
+            border: none;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        .otp-btn {
+            background: #3498db;
+            color: #fff;
+            cursor: pointer;
+        }
+        .otp-btn:hover {
+            background: #2980b9;
+        }
+        .submit-btn {
+            background: #e74c3c;
+            color: #fff;
+            cursor: pointer;
+        }
+        .submit-btn:hover {
+            background: #c0392b;
+        }
+        a{
+            display: inline-block;
+            margin-top: 15px;
+            padding: 10px 20px;
+            text-decoration: none;
+            color: #fff;
+            background: #3498db;
+            border-radius: 6px;
+            font-size: 14px;
+            transition: background 0.3s;
+        }
+        a:hover{
+          background: #2980b9;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <form action="">
+            <h1>Register</h1>
+            <input type="text" placeholder="Name" required><br>
+            <input type="number" placeholder="Phone" required><br>
+            <button type="button" class="otp-btn">SMS OTP</button>
+            <button type="button" class="otp-btn">Whatsapp OTP</button><br>
+            <input type="text" placeholder="OTP" required><br>
+            <input type="password" placeholder="Password" required><br>
+            <input type="password" placeholder="Confirm password" required><br>
+            <button type="submit" class="submit-btn">Submit</button>
+        </form>
+        <a href="http://127.0.0.1:5000/">already a user? login.</a>
+    </div>
+</body>
+</html>
